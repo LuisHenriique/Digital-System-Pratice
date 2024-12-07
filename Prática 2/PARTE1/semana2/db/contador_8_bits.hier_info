@@ -1,0 +1,167 @@
+|contador_8_bits
+Entry => and0.IN1
+Entry => t_ff:t0.Enable
+Clock => t_ff:t0.Clk
+Clock => t_ff:t1.Clk
+Clock => t_ff:t2.Clk
+Clock => t_ff:t3.Clk
+Clock => t_ff:t4.Clk
+Clock => t_ff:t5.Clk
+Clock => t_ff:t6.Clk
+Clock => t_ff:t7.Clk
+Clear_all => t_ff:t0.Clear
+Clear_all => t_ff:t1.Clear
+Clear_all => t_ff:t2.Clear
+Clear_all => t_ff:t3.Clear
+Clear_all => t_ff:t4.Clear
+Clear_all => t_ff:t5.Clear
+Clear_all => t_ff:t6.Clear
+Clear_all => t_ff:t7.Clear
+seg_a1 << decoder_7seg:decoder2.segments[0]
+seg_b1 << decoder_7seg:decoder2.segments[1]
+seg_c1 << decoder_7seg:decoder2.segments[2]
+seg_d1 << decoder_7seg:decoder2.segments[3]
+seg_e1 << decoder_7seg:decoder2.segments[4]
+seg_f1 << decoder_7seg:decoder2.segments[5]
+seg_g1 << decoder_7seg:decoder2.segments[6]
+seg_a2 << decoder_7seg:decoder1.segments[0]
+seg_b2 << decoder_7seg:decoder1.segments[1]
+seg_c2 << decoder_7seg:decoder1.segments[2]
+seg_d2 << decoder_7seg:decoder1.segments[3]
+seg_e2 << decoder_7seg:decoder1.segments[4]
+seg_f2 << decoder_7seg:decoder1.segments[5]
+seg_g2 << decoder_7seg:decoder1.segments[6]
+
+
+|contador_8_bits|t_ff:t0
+Enable => tmp.ENA
+Clk => tmp.CLK
+Clear => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador_8_bits|t_ff:t1
+Enable => tmp.ENA
+Clk => tmp.CLK
+Clear => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador_8_bits|t_ff:t2
+Enable => tmp.ENA
+Clk => tmp.CLK
+Clear => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador_8_bits|t_ff:t3
+Enable => tmp.ENA
+Clk => tmp.CLK
+Clear => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador_8_bits|t_ff:t4
+Enable => tmp.ENA
+Clk => tmp.CLK
+Clear => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador_8_bits|t_ff:t5
+Enable => tmp.ENA
+Clk => tmp.CLK
+Clear => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador_8_bits|t_ff:t6
+Enable => tmp.ENA
+Clk => tmp.CLK
+Clear => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador_8_bits|t_ff:t7
+Enable => tmp.ENA
+Clk => tmp.CLK
+Clear => tmp.ACLR
+Q <= tmp.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador_8_bits|decoder_7seg:decoder1
+binary_input[0] => Mux0.IN19
+binary_input[0] => Mux1.IN19
+binary_input[0] => Mux2.IN19
+binary_input[0] => Mux3.IN19
+binary_input[0] => Mux4.IN19
+binary_input[0] => Mux5.IN19
+binary_input[0] => Mux6.IN19
+binary_input[1] => Mux0.IN18
+binary_input[1] => Mux1.IN18
+binary_input[1] => Mux2.IN18
+binary_input[1] => Mux3.IN18
+binary_input[1] => Mux4.IN18
+binary_input[1] => Mux5.IN18
+binary_input[1] => Mux6.IN18
+binary_input[2] => Mux0.IN17
+binary_input[2] => Mux1.IN17
+binary_input[2] => Mux2.IN17
+binary_input[2] => Mux3.IN17
+binary_input[2] => Mux4.IN17
+binary_input[2] => Mux5.IN17
+binary_input[2] => Mux6.IN17
+binary_input[3] => Mux0.IN16
+binary_input[3] => Mux1.IN16
+binary_input[3] => Mux2.IN16
+binary_input[3] => Mux3.IN16
+binary_input[3] => Mux4.IN16
+binary_input[3] => Mux5.IN16
+binary_input[3] => Mux6.IN16
+segments[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|contador_8_bits|decoder_7seg:decoder2
+binary_input[0] => Mux0.IN19
+binary_input[0] => Mux1.IN19
+binary_input[0] => Mux2.IN19
+binary_input[0] => Mux3.IN19
+binary_input[0] => Mux4.IN19
+binary_input[0] => Mux5.IN19
+binary_input[0] => Mux6.IN19
+binary_input[1] => Mux0.IN18
+binary_input[1] => Mux1.IN18
+binary_input[1] => Mux2.IN18
+binary_input[1] => Mux3.IN18
+binary_input[1] => Mux4.IN18
+binary_input[1] => Mux5.IN18
+binary_input[1] => Mux6.IN18
+binary_input[2] => Mux0.IN17
+binary_input[2] => Mux1.IN17
+binary_input[2] => Mux2.IN17
+binary_input[2] => Mux3.IN17
+binary_input[2] => Mux4.IN17
+binary_input[2] => Mux5.IN17
+binary_input[2] => Mux6.IN17
+binary_input[3] => Mux0.IN16
+binary_input[3] => Mux1.IN16
+binary_input[3] => Mux2.IN16
+binary_input[3] => Mux3.IN16
+binary_input[3] => Mux4.IN16
+binary_input[3] => Mux5.IN16
+binary_input[3] => Mux6.IN16
+segments[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+segments[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+segments[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+segments[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+segments[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+segments[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+segments[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

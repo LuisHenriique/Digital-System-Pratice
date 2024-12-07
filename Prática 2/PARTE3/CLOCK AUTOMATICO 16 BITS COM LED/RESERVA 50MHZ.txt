@@ -1,0 +1,42 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;  -- Importar o pacote para operações aritméticas
+
+entity part3 is
+    Port (
+        clk    : in  STD_LOGIC;  -- Clock de 50 MHz
+        enable : in  STD_LOGIC;  -- Habilitar a contagem
+        clear  : in  STD_LOGIC;  -- Sinal para resetar o contador
+        led    : out STD_LOGIC   -- LED de saída
+    );
+end part3;
+
+architecture Behavioral of part3 is
+    -- Sinais internos
+    signal Q          : STD_LOGIC_VECTOR(25 downto 0) := (others => '0');  -- Contador de 26 bits
+    signal led_on     : STD_LOGIC := '0';  -- Sinal para controlar o LED
+    constant TARGET   : integer := 50000000; -- Valor alvo para o contador
+
+begin
+    -- Processo de contagem usando o clock de 50 MHz
+    process(clk, clear)
+    begin
+        if clear = '1' then
+            Q <= (others => '0');
+            led_on <= '0';  -- Reseta o sinal do LED
+        elsif rising_edge(clk) then
+            if enable = '1' then
+                Q <= std_logic_vector(unsigned(Q) + 1); -- Incrementa o contador
+                
+                -- Checa se o contador alcançou o valor alvo
+                if unsigned(Q) = TARGET then
+                    led_on <= '1';  -- Acende o LED quando o contador atinge o valor alvo
+                end if;
+            end if;
+        end if;
+    end process;
+
+    -- Saída do LED controlada pelo sinal led_on
+    led <= led_on;
+
+end Behavioral;

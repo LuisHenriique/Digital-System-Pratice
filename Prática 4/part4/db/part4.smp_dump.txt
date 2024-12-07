@@ -1,0 +1,8 @@
+
+State Machine - |part4|state
+Name state.FIND_FIRST_ONE state.PAUSE state.DASH state.DOT state.IDLE 
+state.IDLE 0 0 0 0 0 
+state.DOT 0 0 0 1 1 
+state.DASH 0 0 1 0 1 
+state.PAUSE 0 1 0 0 1 
+state.FIND_FIRST_ONE 1 0 0 0 1 

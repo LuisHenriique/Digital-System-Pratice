@@ -1,0 +1,104 @@
+|part4
+clk => clock_divider:U1.clk
+clk => position_counter:U2.clk
+reset => clock_divider:U1.reset
+reset => position_counter:U2.reset
+seg3[0] <= Mux48.DB_MAX_OUTPUT_PORT_TYPE
+seg3[1] <= Mux47.DB_MAX_OUTPUT_PORT_TYPE
+seg3[2] <= Mux46.DB_MAX_OUTPUT_PORT_TYPE
+seg3[3] <= Mux45.DB_MAX_OUTPUT_PORT_TYPE
+seg3[4] <= Mux44.DB_MAX_OUTPUT_PORT_TYPE
+seg3[5] <= Mux43.DB_MAX_OUTPUT_PORT_TYPE
+seg3[6] <= Mux42.DB_MAX_OUTPUT_PORT_TYPE
+seg2[0] <= Mux41.DB_MAX_OUTPUT_PORT_TYPE
+seg2[1] <= Mux40.DB_MAX_OUTPUT_PORT_TYPE
+seg2[2] <= Mux39.DB_MAX_OUTPUT_PORT_TYPE
+seg2[3] <= Mux38.DB_MAX_OUTPUT_PORT_TYPE
+seg2[4] <= Mux37.DB_MAX_OUTPUT_PORT_TYPE
+seg2[5] <= Mux36.DB_MAX_OUTPUT_PORT_TYPE
+seg2[6] <= Mux35.DB_MAX_OUTPUT_PORT_TYPE
+seg1[0] <= Mux34.DB_MAX_OUTPUT_PORT_TYPE
+seg1[1] <= Mux33.DB_MAX_OUTPUT_PORT_TYPE
+seg1[2] <= Mux32.DB_MAX_OUTPUT_PORT_TYPE
+seg1[3] <= Mux31.DB_MAX_OUTPUT_PORT_TYPE
+seg1[4] <= Mux30.DB_MAX_OUTPUT_PORT_TYPE
+seg1[5] <= Mux29.DB_MAX_OUTPUT_PORT_TYPE
+seg1[6] <= Mux28.DB_MAX_OUTPUT_PORT_TYPE
+seg0[0] <= Mux27.DB_MAX_OUTPUT_PORT_TYPE
+seg0[1] <= Mux26.DB_MAX_OUTPUT_PORT_TYPE
+seg0[2] <= Mux25.DB_MAX_OUTPUT_PORT_TYPE
+seg0[3] <= Mux24.DB_MAX_OUTPUT_PORT_TYPE
+seg0[4] <= Mux23.DB_MAX_OUTPUT_PORT_TYPE
+seg0[5] <= Mux22.DB_MAX_OUTPUT_PORT_TYPE
+seg0[6] <= Mux21.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part4|clock_divider:U1
+clk => pulse~reg0.CLK
+clk => counter[0].CLK
+clk => counter[1].CLK
+clk => counter[2].CLK
+clk => counter[3].CLK
+clk => counter[4].CLK
+clk => counter[5].CLK
+clk => counter[6].CLK
+clk => counter[7].CLK
+clk => counter[8].CLK
+clk => counter[9].CLK
+clk => counter[10].CLK
+clk => counter[11].CLK
+clk => counter[12].CLK
+clk => counter[13].CLK
+clk => counter[14].CLK
+clk => counter[15].CLK
+clk => counter[16].CLK
+clk => counter[17].CLK
+clk => counter[18].CLK
+clk => counter[19].CLK
+clk => counter[20].CLK
+clk => counter[21].CLK
+clk => counter[22].CLK
+clk => counter[23].CLK
+clk => counter[24].CLK
+clk => counter[25].CLK
+reset => pulse~reg0.ACLR
+reset => counter[0].ACLR
+reset => counter[1].ACLR
+reset => counter[2].ACLR
+reset => counter[3].ACLR
+reset => counter[4].ACLR
+reset => counter[5].ACLR
+reset => counter[6].ACLR
+reset => counter[7].ACLR
+reset => counter[8].ACLR
+reset => counter[9].ACLR
+reset => counter[10].ACLR
+reset => counter[11].ACLR
+reset => counter[12].ACLR
+reset => counter[13].ACLR
+reset => counter[14].ACLR
+reset => counter[15].ACLR
+reset => counter[16].ACLR
+reset => counter[17].ACLR
+reset => counter[18].ACLR
+reset => counter[19].ACLR
+reset => counter[20].ACLR
+reset => counter[21].ACLR
+reset => counter[22].ACLR
+reset => counter[23].ACLR
+reset => counter[24].ACLR
+reset => counter[25].ACLR
+pulse <= pulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|part4|position_counter:U2
+clk => count[0].CLK
+clk => count[1].CLK
+reset => count[0].ACLR
+reset => count[1].ACLR
+enable => count[1].ENA
+enable => count[0].ENA
+pos[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+pos[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+
+

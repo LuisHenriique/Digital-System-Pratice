@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -6.201
+TNS   : -130.669
+
+Type  : Slow 1100mV 85C Model Setup 'Clock_Divider_1s:U1|dado'
+Slack : -2.254
+TNS   : -29.669
+
+Type  : Slow 1100mV 85C Model Hold 'clk'
+Slack : 0.443
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'Clock_Divider_1s:U1|dado'
+Slack : 0.504
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.538
+TNS   : -32.385
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Clock_Divider_1s:U1|dado'
+Slack : -0.538
+TNS   : -12.393
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -6.397
+TNS   : -131.225
+
+Type  : Slow 1100mV 0C Model Setup 'Clock_Divider_1s:U1|dado'
+Slack : -2.415
+TNS   : -31.395
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : 0.447
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'Clock_Divider_1s:U1|dado'
+Slack : 0.540
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.538
+TNS   : -33.105
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Clock_Divider_1s:U1|dado'
+Slack : -0.538
+TNS   : -12.315
+
+Type  : Fast 1100mV 85C Model Setup 'clk'
+Slack : -3.303
+TNS   : -47.547
+
+Type  : Fast 1100mV 85C Model Setup 'Clock_Divider_1s:U1|dado'
+Slack : -0.729
+TNS   : -9.361
+
+Type  : Fast 1100mV 85C Model Hold 'Clock_Divider_1s:U1|dado'
+Slack : 0.153
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'clk'
+Slack : 0.199
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.336
+TNS   : -4.201
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Clock_Divider_1s:U1|dado'
+Slack : 0.129
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -2.991
+TNS   : -41.300
+
+Type  : Fast 1100mV 0C Model Setup 'Clock_Divider_1s:U1|dado'
+Slack : -0.676
+TNS   : -8.429
+
+Type  : Fast 1100mV 0C Model Hold 'Clock_Divider_1s:U1|dado'
+Slack : 0.141
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'clk'
+Slack : 0.190
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.337
+TNS   : -4.242
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Clock_Divider_1s:U1|dado'
+Slack : 0.136
+TNS   : 0.000
+
+------------------------------------------------------------

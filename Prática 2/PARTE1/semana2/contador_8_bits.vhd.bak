@@ -1,0 +1,72 @@
+-- MODULO QUE USA O FLIP FLOP TIPO T
+-- É UM CONTADOR DE 4 BITS
+--
+--
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity contador_8_bits is
+    Port (
+        enable: in  std_logic;       -- Entrada de clock
+        clock : in  std_logic;       -- Entrada de reset assíncrono
+        clear : in  std_logic;       -- Entrada de clear (reseta assíncrono)
+        Q      : out std_logic_vector(3 downto 0) -- Saída de 4 bits
+		  --Q0    : out std_logic_vector;
+		  --Q1    : out std_logic_vector;
+		  --Q2    : out std_logic_vector;
+		  --Q3    : out std_logic_vector -- Saída de 2 bits
+    );
+end contador_8_bits;
+
+architecture hardware of contador_8_bits is
+
+    -- Declaração do componente FF_T
+    component FF_T
+        Port (
+            T   : in  std_logic;  -- Entrada de controle T
+            clk : in  std_logic;  -- Entrada de clock
+            clr : in  std_logic;  -- Entrada de clear (reset assíncrono)
+            Q   : out std_logic   -- Saída Q
+        );
+    end component;
+
+    -- Sinais internos para conectar os flip-flops
+    signal Q_internal : std_logic_vector(3 downto 0);  -- Vetor para os estados dos flip-flops
+	 
+	 begin
+	 	
+    -- Instanciação do primeiro flip-flop (menos significativo)
+    U0: FF_T
+        Port map (
+            T   => enable,    
+            clk => clock,    
+            clr => clear,  
+            Q   => Q_internal(0)      
+        );
+
+    -- Instanciação do segundo flip-flop (mais significativo)
+    U1: FF_T
+        Port map (
+            T   => Q_internal(0) AND enable,    -- Configura o flip-flop para alternar (T = '1')
+            clk => clock,     -- O clock do segundo flip-flop é a saída do primeiro flip-flop
+            clr => clear,  -- Conecta o clear
+            Q   => Q_internal(1)      -- Saída do segundo flip-flop
+        );
+	 U2: FF_T
+        Port map (
+            T   => Q_internal(1) AND enable,    
+            clk => clock,    
+            clr => clear,  
+            Q   => Q_internal(2)      
+        );
+	 U3: FF_T
+        Port map (
+            T   => Q_internal(2) AND enable,    
+            clk => clock,    
+            clr => clear,  
+            Q   => Q_internal(3)      
+        );
+	-- Atribuição das saídas individuais
+	Q <= Q_internal;
+end hardware;

@@ -1,0 +1,27 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity part2 is
+    Port (
+        clk    : in  STD_LOGIC;
+        rst    : in  STD_LOGIC;
+        cnt_out: out STD_LOGIC_VECTOR(15 downto 0)
+    );
+end part2;
+
+architecture Behavioral of part2 is
+    signal Q : STD_LOGIC_VECTOR(15 downto 0) := (others => '0');
+begin
+    process(clk, rst)
+    begin
+        if rst = '1' then
+            Q <= (others => '0');
+        elsif rising_edge(clk) then
+            Q <= Q + 1;
+        end if;
+    end process;
+
+    cnt_out <= Q;
+end Behavioral;

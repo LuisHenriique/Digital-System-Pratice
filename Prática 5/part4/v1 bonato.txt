@@ -1,0 +1,123 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+entity part4 is
+    port (
+        CLOCK_50   : in  std_logic;                 -- Clock de 50 MHz
+        KEY0       : in  std_logic;                 -- Reset
+        SW         : in  std_logic_vector(8 downto 0); -- Switches para endereço e dados
+        HEX0       : out std_logic_vector(6 downto 0); -- Display de 7 segmentos para dados
+        HEX1       : out std_logic_vector(6 downto 0); -- Display de 7 segmentos para dados de escrita
+        HEX2       : out std_logic_vector(6 downto 0); -- Display de 7 segmentos para endereço
+        HEX3       : out std_logic_vector(6 downto 0); -- Display de 7 segmentos para endereço
+        HEX4       : out std_logic_vector(6 downto 0); -- Display de 7 segmentos para endereço de escrita
+        HEX5       : out std_logic_vector(6 downto 0)  -- Display de 7 segmentos para endereço de escrita
+    );
+end part4;
+
+architecture behavior of part4 is
+
+    signal wraddress   : std_logic_vector(4 downto 0);
+    signal rdaddress   : std_logic_vector(4 downto 0);
+    signal wren        : std_logic := '0';
+    signal data        : std_logic_vector(3 downto 0);
+    signal q           : std_logic_vector(3 downto 0);
+    signal counter     : integer := 0;             -- Contador para o endereço de leitura
+    signal clk_div     : integer := 0;             -- Divisor de clock
+    signal display_data : integer;                 -- Dados a serem exibidos
+
+    component ram32x4
+        port (
+            clock       : in  std_logic;
+            data        : in  std_logic_vector(3 downto 0);
+            rdaddress    : in  std_logic_vector(4 downto 0);
+            wraddress    : in  std_logic_vector(4 downto 0);
+            wren        : in  std_logic;
+            q           : out std_logic_vector(3 downto 0)
+        );
+    end component;
+
+    component display
+        port (
+            bin : in std_logic_vector(3 downto 0);
+            seg : out std_logic_vector(6 downto 0) -- Segments a to g
+        );
+    end component;
+
+begin
+
+    -- Instância da memória RAM
+    RAM_INST : ram32x4
+        port map (
+            clock => CLOCK_50,
+            data => data,
+            rdaddress => rdaddress,
+            wraddress => wraddress,
+            wren => wren,
+            q => q
+        );
+
+    -- Lógica para controle do contador e escrita
+    process(CLOCK_50)
+    begin
+        if rising_edge(CLOCK_50) then
+            if KEY0 = '0' then  -- Reset
+                counter <= 0;
+                rdaddress <= (others => '0');
+                wren <= '0';
+            else
+                clk_div <= clk_div + 1;
+                if clk_div = 50000000 then  -- Aproximadamente 1 segundo
+                    clk_div <= 0;
+                    counter <= (counter + 1) mod 32;  -- Looping através dos endereços
+                end if;
+
+                rdaddress <= std_logic_vector(to_unsigned(counter, 5));
+                display_data <= to_integer(unsigned(q));
+                wren <= SW(8);  -- Ativa escrita se SW8 estiver ligado
+                wraddress <= "0" & SW(7 downto 4);  -- Preenchendo com '0' como o bit mais significativo
+
+                data <= SW(3 downto 0);
+            end if;
+        end if;
+    end process;
+
+    -- Instâncias do display de 7 segmentos
+    HEX0_inst: display
+        port map (
+            bin => q(3 downto 0),
+            seg => HEX0
+        );
+
+    HEX1_inst: display
+        port map (
+            bin => data,
+            seg => HEX1
+        );
+
+    HEX2_inst: display
+        port map (
+            bin => rdaddress(3 downto 0),
+            seg => HEX2
+        );
+
+    HEX3_inst: display
+        port map (
+            bin => rdaddress(4 downto 1), -- Para exibir bits apropriados
+            seg => HEX3
+        );
+
+    HEX4_inst: display
+        port map (
+            bin => wraddress(3 downto 0),
+            seg => HEX4
+        );
+
+    HEX5_inst: display
+        port map (
+            bin => wraddress(4 downto 1), -- Para exibir bits apropriados
+            seg => HEX5
+        );
+
+end behavior;

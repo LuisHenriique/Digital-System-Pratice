@@ -1,0 +1,46 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.std_logic_unsigned.all; -- Para operações aritméticas com std_logic_vector
+
+entity memory_with_display is
+    port (
+        clk     : in std_logic;
+        address : in std_logic_vector(4 downto 0);
+        data    : in std_logic_vector(3 downto 0);
+        wren    : in std_logic;
+        seg     : out std_logic_vector(6 downto 0) -- Saída para o display de 7 segmentos
+    );
+end entity memory_with_display;
+
+architecture Behavioral of memory_with_display is
+
+    -- Definição do tipo de memória
+    type mem is array (0 to 31) of std_logic_vector(3 downto 0);
+    signal memory_array : mem := (others => (others => '0')); -- Inicializa a memória com zeros
+
+    -- Sinal para armazenar o valor lido da memória
+    signal read_data : std_logic_vector(3 downto 0);
+
+begin
+
+    -- Process para ler e escrever na memória
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if wren = '1' then
+                -- Escreve na memória
+                memory_array(to_integer(unsigned(address))) <= data;
+            end if;
+            -- Lê da memória
+            read_data <= memory_array(to_integer(unsigned(address)));
+        end if;
+    end process;
+
+    -- Instancia o display de 7 segmentos
+    display_inst : entity work.display
+        port map (
+            bin => read_data,
+            seg => seg
+        );
+
+end architecture Behavioral;

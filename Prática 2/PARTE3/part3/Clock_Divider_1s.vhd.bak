@@ -1,0 +1,26 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Clock_Divider_1s is
+    Port (
+        clk_in   : in  STD_LOGIC;
+        clk_out  : out STD_LOGIC
+    );
+end Clock_Divider_1s;
+
+architecture Behavioral of Clock_Divider_1s is
+    signal count : integer := 0;
+    constant COUNT_MAX : integer := 50000000 - 1; -- 50 milhões de ciclos
+begin
+    process(clk_in)
+    begin
+        if rising_edge(clk_in) then
+            if count = COUNT_MAX then
+                clk_out <= not clk_out;
+                count <= 0;
+            else
+                count <= count + 1;
+            end if;
+        end if;
+    end process;
+end Behavioral;

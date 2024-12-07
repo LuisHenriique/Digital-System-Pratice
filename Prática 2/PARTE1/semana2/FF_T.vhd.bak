@@ -1,0 +1,26 @@
+library ieee;
+use ieee. std_logic_1164.all;
+ 
+entity FF_T is port
+(
+	T : in std_logic;
+	clk : in std_logic;
+	clr: in std_logic;
+	Q: out std_logic
+
+);
+ 
+architecture behavioral of FF_T is
+begin
+process(clk, clear)
+    begin
+        if clear = '1' then
+            Q <= '0';
+        elsif rising_edge(clk) then
+            if T = '1' then
+                Q <= not Q;
+            end if;
+        end if;
+    end process;
+
+end behavioral;
