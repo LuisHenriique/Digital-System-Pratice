@@ -1,0 +1,29 @@
+# Compile of part2.vhd was successful.
+vsim -gui work.part2
+# vsim -gui work.part2 
+# Start time: 17:19:30 on Aug 26,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.part2(structural)
+# Compile of part2.vhd was successful.
+add wave -position insertpoint sim:/part2/*
+vsim work.part2
+# End time: 17:24:38 on Aug 26,2024, Elapsed time: 0:05:08
+# Errors: 0, Warnings: 0
+# vsim work.part2 
+# Start time: 17:24:38 on Aug 26,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.part2(structural)
+add wave -position insertpoint  \
+sim:/part2/Clk \
+sim:/part2/D \
+sim:/part2/Q \
+sim:/part2/nQ
+force -freeze sim:/part2/D 0 0, 1 {50000 ps} -r 100ns
+force -freeze sim:/part2/Clk 0 0, 1 {100000 ps} -r 200ns
+run
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/14571376/Desktop/part2/wave.do
+run

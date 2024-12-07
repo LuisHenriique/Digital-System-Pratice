@@ -1,0 +1,19 @@
+|master_slave_ff
+D => part3:master_latch.D
+Clk => part3:master_latch.Clk
+Clk => part3:slave_latch.Clk
+Q <= part3:slave_latch.Q
+
+
+|master_slave_ff|part3:master_latch
+Clk => Qa.CLK
+D => Qa.DATAIN
+Q <= Qa.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|master_slave_ff|part3:slave_latch
+Clk => Qa.CLK
+D => Qa.DATAIN
+Q <= Qa.DB_MAX_OUTPUT_PORT_TYPE
+
+
