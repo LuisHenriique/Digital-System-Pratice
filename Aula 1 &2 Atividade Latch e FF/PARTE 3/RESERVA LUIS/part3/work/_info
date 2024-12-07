@@ -1,0 +1,89 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/15577760/Desktop/aula2
+Emaster_slave_ff
+Z0 w1724716558
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dE:/part3
+Z4 8E:/part3/master_slave.vhd
+Z5 FE:/part3/master_slave.vhd
+l0
+L5
+V:Mg^NUHk04XbmZCZjia[c2
+!s100 2L?M3n5:TX3XRB5?2zTb<3
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1724716571
+!i10b 1
+Z8 !s108 1724716570.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:/part3/master_slave.vhd|
+Z10 !s107 E:/part3/master_slave.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abehavior
+Z13 DEx4 work 5 part3 0 22 olmBRfHIZRPRiIzN5o]Q:0
+R1
+R2
+Z14 DEx4 work 15 master_slave_ff 0 22 :Mg^NUHk04XbmZCZjia[c2
+l15
+L12
+Z15 Vef`i`Sb^KezM@W:CUFec52
+Z16 !s100 l4]Bg<XmG:8]Vi?La2Fi`1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Epart3
+Z17 w1724716544
+R1
+R2
+R3
+Z18 8E:\part3\part3.vhd
+Z19 FE:\part3\part3.vhd
+l0
+L4
+VolmBRfHIZRPRiIzN5o]Q:0
+!s100 @z6e:dQ9[<Iac=QO7NX9P2
+R6
+32
+Z20 !s110 1724716570
+!i10b 1
+R8
+Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|E:\part3\part3.vhd|
+Z22 !s107 E:\part3\part3.vhd|
+!i113 1
+R11
+R12
+Astructural
+R1
+R2
+R13
+l13
+L11
+Vk_CimBhMLIAjK0GU?SFdU2
+!s100 gT2NMIZ?g<_U0kZZ=`bh]2
+R6
+32
+R20
+!i10b 1
+R8
+R21
+R22
+!i113 1
+R11
+R12

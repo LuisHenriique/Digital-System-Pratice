@@ -1,0 +1,63 @@
+# Compile of part3.vhd failed with 1 errors.
+# Compile of part3.vhd failed with 1 errors.
+# Compile of part3.vhd was successful.
+# Compile of master_slave.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.master_slave_ff work.part3
+# vsim -gui work.master_slave_ff work.part3 
+# Start time: 20:56:26 on Aug 26,2024
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.master_slave_ff(behavior)
+# Loading work.part3(structural)
+add wave -position insertpoint  \
+sim:/master_slave_ff/D \
+sim:/master_slave_ff/Clk \
+sim:/master_slave_ff/Q
+force -freeze sim:/master_slave_ff/Clk 0 0, 1 {50000 ps} -r 100ns
+force -freeze sim:/master_slave_ff/D 0 0, 1 {100000 ps} -r 200ns
+run
+force -freeze sim:/master_slave_ff/D 0 0, 1 {75000 ps} -r 150ns
+run
+# WARNING: No extended dataflow license exists
+# dfAddDataflowFromWave: (vish-4014) No objects found matching 'x'.
+force -freeze sim:/master_slave_ff/Clk 0 0, 1 {75000 ps} -r 150ns
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/master_slave_ff/D 0 0, 1 {60000 ps} -r 120ns
+run
+force -freeze sim:/master_slave_ff/D 0 0, 1 {50 ps} -r 100
+force -freeze sim:/master_slave_ff/Clk 0 0, 1 {50 ps} -r 100
+run
+add wave -position insertpoint  \
+sim:/master_slave_ff/D \
+sim:/master_slave_ff/Clk \
+sim:/master_slave_ff/Q
+force -freeze sim:/master_slave_ff/Clk 0 0
+force -freeze sim:/master_slave_ff/D 1 0
+run
+restart -f
+noforce sim:/master_slave_ff/Clk
+force -freeze sim:/master_slave_ff/Clk 0 0
+force -freeze sim:/master_slave_ff/D 1 0
+run
+force -freeze sim:/master_slave_ff/Clk 1 0
+force -freeze sim:/master_slave_ff/D 1 0
+run
+run
+# End time: 21:30:33 on Aug 26,2024, Elapsed time: 0:34:07
+# Errors: 1, Warnings: 1

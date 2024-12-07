@@ -1,0 +1,49 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/14571376/Desktop/part1
+Epart2
+Z0 w1724703712
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dC:/Users/14571376/Desktop/part2
+Z4 8C:/Users/14571376/Desktop/part2/part2.vhd
+Z5 FC:/Users/14571376/Desktop/part2/part2.vhd
+l0
+L3
+V6MM20_Cko>9U7W3ifgSZh1
+!s100 HP?_Uz8jINYD0e8^4F9T=3
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1724703782
+!i10b 1
+Z8 !s108 1724703782.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/14571376/Desktop/part2/part2.vhd|
+Z10 !s107 C:/Users/14571376/Desktop/part2/part2.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Astructural
+R1
+R2
+DEx4 work 5 part2 0 22 6MM20_Cko>9U7W3ifgSZh1
+l11
+L7
+VX4S7TS?jQeWAg[SCdgJ8f1
+!s100 m<K_G58U8:8V8BlcAV2iE3
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
